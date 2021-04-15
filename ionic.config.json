@@ -1,5 +1,7 @@
 {
   "name": "AlarmaRobo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

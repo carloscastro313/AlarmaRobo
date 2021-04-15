@@ -1,0 +1,56 @@
+<ion-content class="ion-padding" color="light">
+
+    <div class="img">
+        <ion-img src="/assets/login.png"></ion-img>
+    </div>
+    <ion-text color="primary">
+        <h1>Ingreso a la alarma</h1>
+    </ion-text>
+
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <ion-item color="primary">
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input required formControlName="correo" type="email"></ion-input>
+        </ion-item>
+        <ion-item color="primary" style="padding-top: 15px;">
+            <ion-icon name="key-outline"></ion-icon>
+            <ion-input required formControlName="clave" type="password"></ion-input>
+        </ion-item>
+        <div class="center">
+            <div class="gridBtn" style="padding-top: 2em;">
+
+                <ion-fab-button color="primary" sl expand="full" type="submit" (click)="onSubmit()" [disabled]="formLogin.invalid || formLogin.disabled">
+                    <ion-icon name="log-in-outline"></ion-icon>
+                </ion-fab-button>
+
+                <ion-fab-button block color="primary" sl expand="full" routerLink="/register" [disabled]="formLogin.disabled">
+                    <ion-icon name="person-add-outline"></ion-icon>
+                </ion-fab-button>
+
+            </div>
+        </div>
+
+    </form>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button block color="danger" (click)="fastAccess('usuario@usuario.com','333333')" [disabled]="formLogin.disabled">
+                Usuario
+            </ion-fab-button>
+            <ion-fab-button block color="secondary" (click)="fastAccess('admin@admin.com','111111')" [disabled]="formLogin.disabled">
+                Admin
+            </ion-fab-button>
+            <ion-fab-button block color="tertiary" (click)="fastAccess('invitado@invitado.com','222222')" [disabled]="formLogin.disabled">
+                Invitado
+            </ion-fab-button>
+            <ion-fab-button block color="success" (click)="fastAccess('tester@tester.com','555555')" [disabled]="formLogin.disabled">
+                Tester
+            </ion-fab-button>
+            <ion-fab-button block color="warning" (click)="fastAccess('anonimo@anonimo.com','444444')" [disabled]="formLogin.disabled">
+                Anonimo
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

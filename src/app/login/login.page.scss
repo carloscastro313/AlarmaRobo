@@ -1,0 +1,38 @@
+.img {
+    padding-top: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-img {
+        width: 60%;
+    }
+}
+
+form {
+    padding-top: 2em;
+    ion-button {
+        padding-top: 10px;
+    }
+    ion-fab-button {
+        width: 3.5em !important;
+        height: 3.5em !important;
+    }
+}
+
+ion-fab-list {
+    ion-fab-button {
+        width: 3.5em !important;
+        height: 3.5em !important;
+    }
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.gridBtn {
+    display: grid;
+    grid-template-columns: 3em 3em;
+    gap: 3em;
+}

@@ -1,0 +1,18 @@
+form {
+    padding-top: 10%;
+    ion-button {
+        // padding-top: 10px;
+        margin-top: 100px;
+    }
+    ion-item {
+        --inner-padding-bottom: 4px;
+        --inner-padding-end: 4px;
+        --inner-padding-start: 4px;
+        --inner-padding-top: 4px;
+        --padding-bottom: 4px;
+        --padding-end: 4px;
+        --padding-start: 4px;
+        --padding-top: 4px;
+        font-size: 1.2em;
+    }
+}
