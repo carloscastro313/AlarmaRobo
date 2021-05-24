@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-menu-button slot="start" menu="first"></ion-menu-button>
+        <ion-title>Alarma robo</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content color="light" class="ion-padding">
+    <div class="center">
+        <h1>{{isLock? "Bloqueado" : "Desbloqueado"}}</h1>
+        <ion-fab-button (click)="lock()">
+            <ion-icon [name]="!isLock? 'lock-open-sharp': 'lock-closed-sharp'"></ion-icon>
+        </ion-fab-button>
+    </div>
+    <div class="clave">
+        <ion-input type="password" placeholder="Clave" *ngIf="isLock" [(ngModel)]="clave"></ion-input>
+        <span>{{error}}</span>
+    </div>
+</ion-content>

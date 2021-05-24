@@ -14,6 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { Vibration } from '@ionic-native/vibration/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { UtilityModule } from './utility/utility.module';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { DeviceMotion } from '@ionic-native/device-motion/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { SFXService } from './service/sfx.service';
+import { AlarmaService } from './service/alarma.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +31,11 @@ import { Vibration } from '@ionic-native/vibration/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    UtilityModule
   ],
   providers: [
+    SplashScreen,
+    StatusBar,
     {
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy
@@ -32,7 +43,12 @@ import { Vibration } from '@ionic-native/vibration/ngx';
     AngularFireDatabase,
     AngularFirestore,
     AngularFireAuth,
-  Vibration],
+    Vibration,
+    Flashlight,
+    DeviceMotion,
+    NativeAudio,
+    SFXService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

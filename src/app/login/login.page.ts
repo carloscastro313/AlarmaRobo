@@ -45,6 +45,7 @@ export class LoginPage implements OnInit {
       this.formLogin.disable();
       try {
           await this.auth.login(data.correo, data.clave);
+          localStorage.setItem('clave',data.clave);
           this.route.navigate(['./home']);
           this.vibration.success();
           this.audio.playAudio('../../assets/audio/login/planting-c4-bomb-sound-effect-csgo.mp3');
@@ -62,6 +63,7 @@ export class LoginPage implements OnInit {
     this.formLogin.disable();
       try {
           await this.auth.login(correo, clave);
+          localStorage.setItem('clave',clave);
           this.route.navigate(['./home']);
           this.vibration.success();
           this.audio.playAudio('../../assets/audio/login/planting-c4-bomb-sound-effect-csgo.mp3');

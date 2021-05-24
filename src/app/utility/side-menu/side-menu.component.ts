@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login.service';
 import { Router } from '@angular/router';
 import { ToastService } from '../../service/toast.service';
+import { AlarmaService } from '../../service/alarma.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -16,6 +17,7 @@ export class SideMenuComponent implements OnInit {
     private auth : LoginService,
     public route : Router,
     private toast : ToastService,
+    private AlarmaService : AlarmaService
     ) {
 
     }
@@ -33,6 +35,7 @@ export class SideMenuComponent implements OnInit {
   logout(){
     this.auth.logout()
         .then(() => {
+          this.AlarmaService.deactivate();
           this.route.navigate(['../login']);
         })
         .catch(() => {
